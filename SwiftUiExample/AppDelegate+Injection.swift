@@ -10,8 +10,14 @@ import Resolver
 
 
 extension Resolver: ResolverRegistering {
-    public static func registerAllServices() {
+    private static func registerContentServices() {
         register { ContentService() as ContentServiceProtocol }
+        
         register { ContentViewModel(service: resolve()) }
+        register { SubContentViewModel(contentService: resolve()) }
+    }
+    
+    public static func registerAllServices() {
+        registerContentServices()
     }
 }

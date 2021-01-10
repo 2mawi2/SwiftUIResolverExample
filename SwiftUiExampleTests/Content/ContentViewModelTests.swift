@@ -2,12 +2,6 @@
 import XCTest
 @testable import SwiftUiExample
 
-class MockContentService: ContentServiceProtocol {
-    func getName() -> String {
-        return "mocked name"
-    }
-}
-
 class ContentViewModelTests: XCTestCase {
     let contentServiceMock: MockContentService = MockContentService()
 

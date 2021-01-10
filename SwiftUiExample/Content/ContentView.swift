@@ -14,10 +14,18 @@ struct ContentView: View {
     @ObservedObject var contentViewModel: ContentViewModel = Resolver.resolve()
 
     var body: some View {
-        Text(contentViewModel.text)
-        Button("change value", action: {
-            contentViewModel.onClickChangeValue()
-        })
+        
+        VStack {
+            Text(contentViewModel.text)
+            Button("change value", action: {
+                contentViewModel.onClickChangeValue()
+            })
+            List {
+                SubContentView(subViewText: "first text")
+                SubContentView(subViewText: "second text")
+                SubContentView(subViewText: "third text")
+            }
+        }
     }
 }
 
