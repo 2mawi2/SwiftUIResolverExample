@@ -1,5 +1,6 @@
 
 import XCTest
+import RxSwift
 @testable import SwiftUiExample
 
 class ContentViewModelTests: XCTestCase {
@@ -11,6 +12,6 @@ class ContentViewModelTests: XCTestCase {
         // act
         contentViewModel.onClickChangeValue()
         // assert
-        XCTAssertEqual(contentViewModel.text, "mocked name")
+        XCTAssertEqual(contentViewModel.text, "mocked rx swift observable")
     }
 }

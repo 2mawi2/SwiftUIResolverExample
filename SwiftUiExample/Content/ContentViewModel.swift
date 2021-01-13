@@ -6,21 +6,24 @@
 //
 
 import Foundation
-
+import RxSwift
 
 class ContentViewModel: ObservableObject {
     let service: ContentServiceProtocol
-    
+    let disposeBag = DisposeBag()
+
     @Published var text: String = "initial value"
-    
+
     init(
         service: ContentServiceProtocol
     ) {
         self.service = service
     }
-    
-    func onClickChangeValue(){
-        let newValue = service.getName()
-        text = newValue
+
+    func onClickChangeValue() {
+        service
+            .getName()
+            .subscribe(onNext: { self.text = $0.title })
+            .disposed(by: self.disposeBag)
     }
 }

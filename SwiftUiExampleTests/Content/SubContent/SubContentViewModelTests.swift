@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import RxSwift
 @testable import SwiftUiExample
 
 
@@ -19,6 +20,6 @@ class SubContentViewModelTests: XCTestCase {
         contentViewModel.onClickSubView()
         contentViewModel.onClickSubView()
         // assert
-        XCTAssertEqual(contentViewModel.specialText, "mocked namemocked name")
+        XCTAssertEqual(contentViewModel.specialText, "mocked rx swift observablemocked rx swift observable")
     }
 }

@@ -6,17 +6,22 @@
 //
 
 import Foundation
+import RxSwift
 
 class SubContentViewModel: ObservableObject {
-    @Published var specialText: String = ""
-
     let contentService: ContentServiceProtocol
+    let disposeBag = DisposeBag()
+
+    @Published var specialText: String = ""
 
     init(contentService: ContentServiceProtocol) {
         self.contentService = contentService
     }
 
     func onClickSubView() {
-        specialText = specialText + contentService.getName()
+        contentService
+            .getName()
+            .subscribe(onNext: { self.specialText = self.specialText + $0.title })
+            .disposed(by: disposeBag)
     }
 }
