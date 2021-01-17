@@ -1,0 +1,9 @@
+sources:
+  - ./SwiftUiExample
+templates:
+  - ./SwiftUiExampleTests/sourcery-templates
+output:
+  ./SwiftUiExampleTests/generated-mocks
+args:
+  imports:
+    - RxSwift

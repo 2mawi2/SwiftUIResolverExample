@@ -20,7 +20,7 @@ class SubContentViewModel: ObservableObject {
 
     func onClickSubView() {
         contentService
-            .getName()
+            .getName(defaultArg: "some sample arg")
             .subscribe(onNext: { self.specialText = self.specialText + $0.title })
             .disposed(by: disposeBag)
     }

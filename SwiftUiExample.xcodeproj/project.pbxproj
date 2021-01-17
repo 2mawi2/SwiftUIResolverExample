@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2967B2C125B22B840067A28B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2967B2C025B22B840067A28B /* RxCocoa */; };
+		2967B2C325B22B840067A28B /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 2967B2C225B22B840067A28B /* RxRelay */; };
+		2967B2C525B22B840067A28B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2967B2C425B22B840067A28B /* RxSwift */; };
 		29D5D27A25A9C205007D6003 /* SwiftUiExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D5D27925A9C205007D6003 /* SwiftUiExampleApp.swift */; };
 		29D5D27C25A9C205007D6003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29D5D27B25A9C205007D6003 /* ContentView.swift */; };
 		29D5D27E25A9C206007D6003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29D5D27D25A9C206007D6003 /* Assets.xcassets */; };
@@ -24,7 +27,9 @@
 		29EFEF4725AF94C900BCD7E2 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 29EFEF4625AF94C900BCD7E2 /* Alamofire */; };
 		29EFEF4C25AF94DE00BCD7E2 /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 29EFEF4B25AF94DE00BCD7E2 /* RxAlamofire */; };
 		29EFEF5425AF97AF00BCD7E2 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EFEF5325AF97AF00BCD7E2 /* Content.swift */; };
-		29EFEF9125AFAFEF00BCD7E2 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 29EFEF9025AFAFEF00BCD7E2 /* RxSwift */; };
+		29FB588525B4472600A243EA /* generate-mocks.sh in Resources */ = {isa = PBXBuildFile; fileRef = 29FB588425B4472600A243EA /* generate-mocks.sh */; };
+		29FB589B25B44C5A00A243EA /* generated-mocks in Resources */ = {isa = PBXBuildFile; fileRef = 29FB589A25B44C5A00A243EA /* generated-mocks */; };
+		29FB58B625B4511C00A243EA /* AutoMockable.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29FB58B525B4511C00A243EA /* AutoMockable.generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +83,11 @@
 		29EB0AED25AB2740000BCF04 /* SubContentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubContentViewModelTests.swift; sourceTree = "<group>"; };
 		29EB0AF425AB276D000BCF04 /* MockContentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockContentService.swift; sourceTree = "<group>"; };
 		29EFEF5325AF97AF00BCD7E2 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		29FB588425B4472600A243EA /* generate-mocks.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "generate-mocks.sh"; sourceTree = "<group>"; };
+		29FB589A25B44C5A00A243EA /* generated-mocks */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "generated-mocks"; sourceTree = "<group>"; };
+		29FB58AA25B44E3F00A243EA /* .sourcery.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .sourcery.yml; sourceTree = "<group>"; };
+		29FB58AF25B44FAB00A243EA /* AutoMockable.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = AutoMockable.stencil; sourceTree = "<group>"; };
+		29FB58B525B4511C00A243EA /* AutoMockable.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AutoMockable.generated.swift; path = "SwiftUiExampleTests/generated-mocks/AutoMockable.generated.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +95,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2967B2C525B22B840067A28B /* RxSwift in Frameworks */,
+				2967B2C325B22B840067A28B /* RxRelay in Frameworks */,
 				29EFEF4725AF94C900BCD7E2 /* Alamofire in Frameworks */,
 				29EFEF4C25AF94DE00BCD7E2 /* RxAlamofire in Frameworks */,
-				29EFEF9125AFAFEF00BCD7E2 /* RxSwift in Frameworks */,
+				2967B2C125B22B840067A28B /* RxCocoa in Frameworks */,
 				29D5D2C225A9CB68007D6003 /* Resolver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +124,8 @@
 		29D5D26D25A9C205007D6003 = {
 			isa = PBXGroup;
 			children = (
+				29FB58AA25B44E3F00A243EA /* .sourcery.yml */,
+				29FB588425B4472600A243EA /* generate-mocks.sh */,
 				29D5D27825A9C205007D6003 /* SwiftUiExample */,
 				29D5D28F25A9C206007D6003 /* SwiftUiExampleTests */,
 				29D5D29A25A9C206007D6003 /* SwiftUiExampleUITests */,
@@ -146,6 +160,8 @@
 		29D5D28F25A9C206007D6003 /* SwiftUiExampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				29FB58AE25B44FAB00A243EA /* sourcery-templates */,
+				29FB589A25B44C5A00A243EA /* generated-mocks */,
 				29EB0AF325AB275B000BCF04 /* Mocks */,
 				29D5D2D225A9D892007D6003 /* Content */,
 				29D5D29225A9C206007D6003 /* Info.plist */,
@@ -203,6 +219,7 @@
 		29EB0AF325AB275B000BCF04 /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				29FB58B525B4511C00A243EA /* AutoMockable.generated.swift */,
 				29EB0AF425AB276D000BCF04 /* MockContentService.swift */,
 			);
 			path = Mocks;
@@ -213,6 +230,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		29FB58AE25B44FAB00A243EA /* sourcery-templates */ = {
+			isa = PBXGroup;
+			children = (
+				29FB58AF25B44FAB00A243EA /* AutoMockable.stencil */,
+			);
+			path = "sourcery-templates";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +261,9 @@
 				29D5D2C125A9CB68007D6003 /* Resolver */,
 				29EFEF4625AF94C900BCD7E2 /* Alamofire */,
 				29EFEF4B25AF94DE00BCD7E2 /* RxAlamofire */,
-				29EFEF9025AFAFEF00BCD7E2 /* RxSwift */,
+				2967B2C025B22B840067A28B /* RxCocoa */,
+				2967B2C225B22B840067A28B /* RxRelay */,
+				2967B2C425B22B840067A28B /* RxSwift */,
 			);
 			productName = SwiftUiExample;
 			productReference = 29D5D27625A9C205007D6003 /* SwiftUiExample.app */;
@@ -317,7 +344,7 @@
 				29D5D2C025A9CB68007D6003 /* XCRemoteSwiftPackageReference "Resolver" */,
 				29EFEF4525AF94C900BCD7E2 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				29EFEF4A25AF94DE00BCD7E2 /* XCRemoteSwiftPackageReference "RxAlamofire" */,
-				29EFEF8F25AFAFEF00BCD7E2 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				2967B2BF25B22B840067A28B /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 29D5D27725A9C205007D6003 /* Products */;
 			projectDirPath = "";
@@ -343,6 +370,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29FB589B25B44C5A00A243EA /* generated-mocks in Resources */,
+				29FB588525B4472600A243EA /* generate-mocks.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +399,7 @@
 				29EB0AE925AB26F7000BCF04 /* SubContentViewModel.swift in Sources */,
 				29D5D28625A9C206007D6003 /* SwiftUiExample.xcdatamodeld in Sources */,
 				29D5D27A25A9C205007D6003 /* SwiftUiExampleApp.swift in Sources */,
+				29FB58B625B4511C00A243EA /* AutoMockable.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,6 +716,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2967B2BF25B22B840067A28B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		29D5D2C025A9CB68007D6003 /* XCRemoteSwiftPackageReference "Resolver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Resolver.git";
@@ -710,17 +748,24 @@
 				minimumVersion = 6.1.1;
 			};
 		};
-		29EFEF8F25AFAFEF00BCD7E2 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2967B2C025B22B840067A28B /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2967B2BF25B22B840067A28B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		2967B2C225B22B840067A28B /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2967B2BF25B22B840067A28B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		2967B2C425B22B840067A28B /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2967B2BF25B22B840067A28B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
 		29D5D2C125A9CB68007D6003 /* Resolver */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 29D5D2C025A9CB68007D6003 /* XCRemoteSwiftPackageReference "Resolver" */;
@@ -735,11 +780,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 29EFEF4A25AF94DE00BCD7E2 /* XCRemoteSwiftPackageReference "RxAlamofire" */;
 			productName = RxAlamofire;
-		};
-		29EFEF9025AFAFEF00BCD7E2 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 29EFEF8F25AFAFEF00BCD7E2 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 
