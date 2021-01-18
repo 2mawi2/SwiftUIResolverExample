@@ -17,7 +17,7 @@ protocol ContentServiceProtocol {
     func someExtension() -> String
 }
 
-// sourcery: AutoMockable
+
 extension ContentServiceProtocol {
     func someExtension() -> String {
         return "some extension value"

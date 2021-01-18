@@ -13,6 +13,7 @@ class SubContentViewModel: ObservableObject {
     let disposeBag = DisposeBag()
 
     @Published var specialText: String = ""
+    @Published var content: Content? = nil
 
     init(contentService: ContentServiceProtocol) {
         self.contentService = contentService
@@ -21,7 +22,17 @@ class SubContentViewModel: ObservableObject {
     func onClickSubView() {
         contentService
             .getName(defaultArg: "some sample arg")
-            .subscribe(onNext: { self.specialText = self.specialText + $0.title })
+            .subscribe(onNext: { content in
+            self.content = content
+            self.specialText = self.specialText + content.title
+        }).disposed(by: disposeBag)
+    }
+
+    func fetchContent() {
+        contentService
+            .getName()
+            .filter { $0.completed }
+            .subscribe(onNext: { content in self.content = content })
             .disposed(by: disposeBag)
     }
 }
